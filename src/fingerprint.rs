@@ -32,6 +32,7 @@ pub struct MatchPattern {
 }
 
 pub struct FingerprintDB {
+    #[allow(dead_code)]
     fingerprints: Vec<ServiceFingerprint>,
     probe_map: HashMap<u16, Vec<ServiceFingerprint>>,
 }
@@ -86,6 +87,7 @@ impl FingerprintDB {
         }).unwrap_or(empty)
     }
 
+    #[allow(dead_code)]
     pub fn identify_http(&self, response: &str) -> ServiceMatch {
         let patterns = [
             ("HTTP/1.", "http", "HTTP server"),
